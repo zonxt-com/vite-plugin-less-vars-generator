@@ -91,3 +91,27 @@ export const gutterBase = '8px';
 export const gutterSmall = '8px * 0.8;';
 export const gutterXsmall = '8px * 0.6;';
 ```
+Use it in vue3
+```
+<template>
+  <div class="wraper">
+    <h1 :style="style">Hello</h1>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { colorPrimary, colorBg } from "../src/styles";
+
+const style = {
+  color: colorPrimary,
+  backgroundColor: colorBg,
+};
+</script>
+
+<style scoped>
+.wraper {
+  text-align: center;
+}
+</style>
+
+```

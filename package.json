@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-less-vars-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Less vars generator for vite, export vars as js object",
   "main": "dist/index.js",
   "author": "zonxt.com",
