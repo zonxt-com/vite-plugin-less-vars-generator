@@ -50,7 +50,11 @@ export default function lessVarsGenerator({ lessPath }: PluginOptions): Plugin {
           list.length > 0 &&
             list.forEach((row) => {
               const varItem = lessVars.find((x) => x.name === name);
-              varItem && (row.value = row.value.replace(name, varItem.value));
+              varItem &&
+                (row.value = row.value.replace(
+                  name,
+                  varItem.value.replace(";", "")
+                ));
             });
         });
 
@@ -65,7 +69,7 @@ export default function lessVarsGenerator({ lessPath }: PluginOptions): Plugin {
         const { name, value } = row;
         outStr += `export const ${toCamelCase(name)} = '${value
           .trimLeft()
-          .replace(";", "")}';\n`;
+          .replace(";", "")}'\n`;
       });
       const filePath = getFilePath() + "/" + "index.ts";
       fs.writeFileSync(filePath, outStr);
