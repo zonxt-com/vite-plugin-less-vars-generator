@@ -74,22 +74,22 @@ yarn dev
 ```
 In project root path 'src/styles/', generated a 'index.ts' file
 ```
-export const colorPrimary = '#ed6e00';
-export const colorBg = '#f8f8f8';
-export const colorDesc = '#999999';
-export const colorTextPrimary = '#464646';
-export const colorTextDesc = '#8f8f8f';
-export const colorLink = '#4295ff';
-export const colorBorder = '#e4e4e4';
-export const colorWhite = '#ffffff';
-export const colorRed = 'red';
-export const fontSizeBase = '14px';
-export const fontSizeSmall = '14px * 0.8;';
-export const gutterXlarge = '8px * 1.4;';
-export const gutterLarge = '8px * 1.2;';
-export const gutterBase = '8px';
-export const gutterSmall = '8px * 0.8;';
-export const gutterXsmall = '8px * 0.6;';
+export const colorPrimary = '#ed6e00'
+export const colorBg = '#f8f8f8'
+export const colorDesc = '#999999'
+export const colorTextPrimary = '#464646'
+export const colorTextDesc = '#8f8f8f'
+export const colorLink = '#4295ff'
+export const colorBorder = '#e4e4e4'
+export const colorWhite = '#ffffff'
+export const colorRed = 'red'
+export const fontSizeBase = '14px'
+export const fontSizeSmall = '14px * 0.8'
+export const gutterXlarge = '8px * 1.4'
+export const gutterLarge = '8px * 1.2'
+export const gutterBase = '8px'
+export const gutterSmall = '8px * 0.8'
+export const gutterXsmall = '8px * 0.6'
 ```
 Use it in vue3
 ```
