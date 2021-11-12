@@ -1,6 +1,6 @@
 <template>
   <div class="wraper">
-    <h1 :style="style">Hello</h1>
+    <div :style="style">Hello</div>
     <p>{{ `import { colorPrimary, colorBg } from "../src/styles";` }}</p>
     <p>
       {{
@@ -14,11 +14,18 @@
 </template>
 
 <script lang="ts" setup>
-import { colorPrimary, colorBg } from "../src/styles";
+import {
+  colorPrimary,
+  colorBg,
+  fontSizeXlarge,
+  gutterXlarge,
+} from "../src/styles";
 
 const style = {
   color: colorPrimary,
   backgroundColor: colorBg,
+  fontSize: fontSizeXlarge,
+  padding: gutterXlarge,
 };
 </script>
 

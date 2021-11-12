@@ -3,6 +3,7 @@ import * as fs from "fs";
 import * as readline from "readline";
 import { PluginOptions } from "../types";
 import { isNullOrUnDefOrStringEmpty, toCamelCase } from "../utils";
+import math from "mathjs";
 
 interface LessVarObj {
   name: string;
@@ -50,11 +51,23 @@ export default function lessVarsGenerator({ lessPath }: PluginOptions): Plugin {
           list.length > 0 &&
             list.forEach((row) => {
               const varItem = lessVars.find((x) => x.name === name);
-              varItem &&
-                (row.value = row.value.replace(
+              if (varItem) {
+                row.value = row.value.replace(
                   name,
                   varItem.value.replace(";", "")
-                ));
+                );
+
+                // expression calculate
+                let newValue = "";
+                if (row.value) {
+                  const regEx = /[0-9\+\-\*\.]/gi;
+                  const evalValue = row.value.match(regEx)?.join("");
+                  const val1 = math.evaluate(evalValue || "").toFixed(2);
+                  newValue += val1 + row.value.replace(regEx, "");
+                }
+
+                row.value = newValue.replace(/\s*/g, "");
+              }
             });
         });
 
@@ -66,7 +79,7 @@ export default function lessVarsGenerator({ lessPath }: PluginOptions): Plugin {
       };
       let outStr = "";
       lessVars.forEach((row) => {
-        const { name, value } = row;
+        let { name, value } = row;
         outStr += `export const ${toCamelCase(name)} = '${value
           .trimLeft()
           .replace(";", "")}'\n`;

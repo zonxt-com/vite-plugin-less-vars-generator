@@ -41,6 +41,8 @@ export default defineConfig({
 @color-white: #ffffff;
 @color-red: red;
 
+@font-size-xlarge: @font-size-base * 1.4;
+@font-size-large: @font-size-base * 1.2;
 @font-size-base: 14px;
 @font-size-small: @font-size-base * 0.8;
 
@@ -83,28 +85,37 @@ export const colorLink = '#4295ff'
 export const colorBorder = '#e4e4e4'
 export const colorWhite = '#ffffff'
 export const colorRed = 'red'
+export const fontSizeXlarge = '19.60px'
+export const fontSizeLarge = '16.80px'
 export const fontSizeBase = '14px'
-export const fontSizeSmall = '14px * 0.8'
-export const gutterXlarge = '8px * 1.4'
-export const gutterLarge = '8px * 1.2'
+export const fontSizeSmall = '11.20px'
+export const gutterXlarge = '11.20px'
+export const gutterLarge = '9.60px'
 export const gutterBase = '8px'
-export const gutterSmall = '8px * 0.8'
-export const gutterXsmall = '8px * 0.6'
+export const gutterSmall = '6.40px'
+export const gutterXsmall = '4.80px'
 ```
 Use it in vue3
 ```
 <template>
   <div class="wraper">
-    <h1 :style="style">Hello</h1>
+    <div :style="style">Hello</div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { colorPrimary, colorBg } from "../src/styles";
+import {
+  colorPrimary,
+  colorBg,
+  fontSizeXlarge,
+  gutterXlarge,
+} from "../src/styles";
 
 const style = {
   color: colorPrimary,
   backgroundColor: colorBg,
+  fontSize: fontSizeXlarge,
+  padding: gutterXlarge,
 };
 </script>
 
@@ -113,5 +124,4 @@ const style = {
   text-align: center;
 }
 </style>
-
 ```
