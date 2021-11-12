@@ -3,7 +3,7 @@ import * as fs from "fs";
 import * as readline from "readline";
 import { PluginOptions } from "../types";
 import { isNullOrUnDefOrStringEmpty, toCamelCase } from "../utils";
-import math from "mathjs";
+import * as math from "mathjs";
 
 interface LessVarObj {
   name: string;
