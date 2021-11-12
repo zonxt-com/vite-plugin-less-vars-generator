@@ -7,6 +7,12 @@ npm install vite-plugin-less-vars-generator --save-dev
 # or
 yarn add vite-plugin-less-vars-generator --dev
 ```
+This plugin depends on mathjs, you also need to insall:
+```sh
+npm install mathjs --save-dev
+# or
+yarn add mathjs --dev
+```
 
 # Usage
 **vite.config.js**
